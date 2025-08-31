@@ -1,18 +1,18 @@
-🐍 Snake Game in C (Raylib)
+# Snake Game in C (Raylib)
 
 A simple **Snake Game** written in **C** as a refresher for C syntax in a computer science course.  
 This project uses [Raylib](https://www.raylib.com/) for graphics, installed via [vcpkg](https://github.com/microsoft/vcpkg).
 
 ---
 
-## 🚀 Features
+## Features
 - Classic **Snake gameplay**: move around, eat food, and grow.
 - **2D tile-based map system** (grass, walls, player, food).
-- **Collision detection** using AABB (axis-aligned bounding boxes).
+- **Collision detection** using 2D matrix coordinates.
 - **Modular design** with separate headers for map logic, movement, math utilities, and food spawning.
 - **Menu system** with ability to reset and restart.
 - **Randomized food spawning and player positioning**.
-
+- W, A, S, D Movement
 ---
 
 ## 🛠️ Installation

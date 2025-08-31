@@ -132,13 +132,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="food.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="map.c" />
+    <ClCompile Include="menu.c" />
     <ClCompile Include="movement.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="food.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="math.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="movement.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

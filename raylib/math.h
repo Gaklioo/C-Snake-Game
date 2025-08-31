@@ -27,3 +27,8 @@ _Bool isTouching(struct boxDimensions a, struct boxDimensions b)
 		aMaxY >= bMinY
 		);
 }
+
+_Bool IsMouseWithin(Vector2 p1, Vector2 p2, Vector2 mPos)
+{
+	return (mPos.x >= p1.x && mPos.x <= p2.x && mPos.y >= p1.y && mPos.y <= p2.y);
+}

@@ -1,11 +1,12 @@
 #include "map.h"
+#include "movement.h"
 
-int getCellWidth(int columns)
+int GetCellWidth(int columns)
 {
 	return (SCREEN_WIDTH / columns);
 }
 
-int getCellHeight(int rows)
+int GetCellHeight(int rows)
 {
 	return (SCREEN_HEIGHT / rows);
 }
@@ -29,18 +30,15 @@ void InitMap(struct Map* m)
 			}
 		}
 	}
-
-
 }
 
 Vector2 InitPlayerPosition(struct Map* m)
 {
 	int rows = m->rows;
 	int columns = m->columns;
-	srand(time(NULL));
 
-	int randomX = (rand() % rows) + 1;
-	int randomY = (rand() % columns) + 1;
+	int randomX = (rand() % rows);
+	int randomY = (rand() % columns);
 
 	if (randomX == 0)
 	{
@@ -70,10 +68,17 @@ Vector2 InitPlayerPosition(struct Map* m)
 	return pos;
 }
 
+void ResetPlayer(struct Map* m, struct PlayerInfo* ply)
+{
+	Vector2 newPlyPos = InitPlayerPosition(m);
+
+	ply->playerPos = newPlyPos;
+}
+
 void Draw(struct Map* m)
 {
-	int cellWidth = getCellWidth(m->columns);
-	int cellHeight = getCellHeight(m->rows);
+	int cellWidth = GetCellWidth(m->columns);
+	int cellHeight = GetCellHeight(m->rows);
 
 	BeginDrawing();
 
@@ -91,7 +96,11 @@ void Draw(struct Map* m)
 			{
 				DrawRectangle((i * cellWidth), (j * cellHeight), cellWidth, cellHeight, ORANGE);
 			}
-			else
+			else if (m->map[i][j] == FOOD)
+			{
+				DrawRectangle((i * cellWidth), (j * cellHeight), cellWidth, cellHeight, RED);
+			}
+			else // WALL
 			{
 				DrawRectangle((i * cellWidth), (j * cellHeight), cellWidth, cellHeight, GREEN);
 			}

@@ -24,6 +24,12 @@
     <ClCompile Include="movement.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="food.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="map.h">
@@ -33,6 +39,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="movement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="food.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
